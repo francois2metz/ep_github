@@ -1,0 +1,10 @@
+{
+    "parts": [
+        {
+            "name": "ep_github",
+            "hooks": {
+                "expressConfigure" : "ep_github/ep_github:expressConfigure"
+            }
+        }
+    ]
+}
