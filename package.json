@@ -6,5 +6,9 @@
 	"contributors": [],
 	"dependencies": {
             "connect_auth_github" : "~ 0.0.4"
+        },
+        "repository": {
+            "type": "git",
+            "url": "https://github.com/francois2metz/ep_github.git"
         }
 }
