@@ -1,6 +1,6 @@
 {
 	"name": "ep_github",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"description": "Authenticate users against Github on Etherpad lite",
 	"author": "François de Metz <francois@2metz.fr>",
 	"contributors": [],
