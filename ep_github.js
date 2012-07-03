@@ -5,7 +5,7 @@ var exp = require('ep_etherpad-lite/node_modules/express');
 
 exports.expressConfigure = function(hook_name, args, cb) {
     args.app.use(function(req, res, next) {
-        if (req.url.match(/^\/static/) || req.url.match(/^\/javascripts/)) {
+        if (req.path.match(/^\/(static|javascripts|pluginfw)/)) {
             next();
         } else {
             github.orgAccess({
