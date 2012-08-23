@@ -1,3 +1,4 @@
+[![build status](https://secure.travis-ci.org/francois2metz/ep_github.png)](http://travis-ci.org/francois2metz/ep_github)
 # Etherpad lite Github authorization
 
 ## Install
