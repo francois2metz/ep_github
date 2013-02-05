@@ -11,7 +11,7 @@ exports.expressConfigure = function(hook_name, args, cb) {
             github.orgAccess({
                 appId: settings.users.github.appId,
                 appSecret: settings.users.github.appSecret,
-                callback: settings.users.github.callack
+                callback: settings.users.github.callback
             }, settings.users.github.org).handle(req, res, next);
         }
     });
