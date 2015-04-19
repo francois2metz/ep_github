@@ -12,7 +12,11 @@ Add to settings.json:
         "github": {
             "appId": "Replace with you app id",
             "appSecret": "Replace with your app secret",
-            "org": "Replace with your organisation"
+            "config": {
+              "organization": "Replace with your organization",
+              "team": "org-team",
+              "users": ["roger", "hanin"]
+            }
         }
     },
 

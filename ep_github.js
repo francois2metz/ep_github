@@ -1,10 +1,13 @@
-var settings = require('ep_etherpad-lite/node/utils/Settings');
-var githubAuth = require('github-auth');
-var config = {
-    organization: settings.users.github.org,
-    autologin: true // This automatically redirects you to github to login.
-};
-var gh = githubAuth(settings.users.github.appId,settings.users.github.appSecret, config);
+var settings = require('ep_etherpad-lite/node/utils/Settings'),
+    ghSettings = settings.users.github,
+    githubAuth = require('github-auth');
+
+var ghConfig = ghSettings.config;
+ghConfig.autologin = true;
+
+var gh = githubAuth(ghSettings.appId,
+                    ghSettings.appSecret,
+                    ghConfig);
 
 exports.expressConfigure = function(hook_name, args, cb) {
     var app = args.app;
