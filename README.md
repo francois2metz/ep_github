@@ -1,4 +1,4 @@
-# Etherpad lite Github authorization
+# Etherpad lite GitHub authorization
 
 ## Install
 
@@ -21,4 +21,4 @@ Add to settings.json:
 
 BSD
 
-Copyright (C) 2012 by François de Metz
+Copyright (C) 2015 by François de Metz
