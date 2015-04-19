@@ -12,7 +12,6 @@ Add to settings.json:
         "github": {
             "appId": "Replace with you app id",
             "appSecret": "Replace with your app secret",
-            "callback": "Replace with full url (including http) + /auth/github_callback: (http:\/\/localhost:9001/auth/github_callback)",
             "org": "Replace with your organisation"
         }
     },
