@@ -1,7 +1,6 @@
 var settings = require('ep_etherpad-lite/node/utils/Settings');
 var githubAuth = require('github-auth');
 var config = {
-    team: 'test',
     organization: settings.users.github.org,
     autologin: true // This automatically redirects you to github to login. 
 };
