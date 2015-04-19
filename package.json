@@ -1,11 +1,11 @@
 {
 	"name": "ep_github",
-	"version": "0.0.2",
+	"version": "0.0.4",
 	"description": "Authenticate users against Github on Etherpad lite",
 	"author": "François de Metz <francois@2metz.fr>",
-	"contributors": [],
+	"contributors": [{ "name": "John McLear" }],
 	"dependencies": {
-            "connect_auth_github" : "~ 0.0.4"
+            "github-auth" : "0.4.1"
         },
         "repository": {
             "type": "git",
