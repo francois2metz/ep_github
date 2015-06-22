@@ -14,7 +14,7 @@ exports.expressConfigure = function(hook_name, args, cb) {
     app.get('/login', gh.login);
     app.use(gh.authenticate);
     app.use(function(req, res, next) {
-        if (req.path.match(/^\/(static|javascripts|pluginfw)/)) {
+        if (req.path.match(/^\/(static|javascripts|pluginfw|locales|favicon)/)) {
             // Don't ask for github auth for static paths
             next();
         } else {
