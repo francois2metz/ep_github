@@ -10,7 +10,7 @@ var reconfigure = function() {
         return (ghConfig.redirectProtocol || 'https') + '://' + req.headers.host + '/ghredirect?to=' + req.originalUrl;
     };
 
-    var gh = githubAuth(ghSettings.appId,
+    gh = githubAuth(ghSettings.appId,
                         ghSettings.appSecret,
                         ghConfig);
 };
