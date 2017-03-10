@@ -1,18 +1,22 @@
-var settings = require('ep_etherpad-lite/node/utils/Settings'),
-    ghSettings = settings.users.github,
-    githubAuth = require('github-auth');
+var gh;
+var reconfigure = function() {
+    var settings = require('ep_etherpad-lite/node/utils/Settings'),
+        ghSettings = settings.users.github,
+        githubAuth = require('github-auth');
 
-var ghConfig = ghSettings.config;
-ghConfig.autologin = true;
-ghConfig.redirectUri = ghConfig.redirectUri || function(req) {
-    return (ghConfig.protocol || 'https') + '://' + req.headers.host + '/ghredirect?to=' + req.originalUrl;
-}
+    var ghConfig = ghSettings.config;
+    ghConfig.autologin = true;
+    ghConfig.redirectUri = ghConfig.redirectUri || function(req) {
+        return (ghConfig.protocol || 'https') + '://' + req.headers.host + '/ghredirect?to=' + req.originalUrl;
+    }
 
-var gh = githubAuth(ghSettings.appId,
-                    ghSettings.appSecret,
-                    ghConfig);
+    var gh = githubAuth(ghSettings.appId,
+                        ghSettings.appSecret,
+                        ghConfig);
+};
 
 exports.expressConfigure = function(hook_name, args, cb) {
+    reconfigure();
     var app = args.app;
     app.get('/login', gh.login);
     app.use(gh.authenticate);
@@ -28,7 +32,6 @@ exports.expressConfigure = function(hook_name, args, cb) {
                 var match = false;
                 match = /^\/ghredirect\?to=(\/(p\/)?[A-Za-z0-9_\-]*?)(&code=.+)?$/.exec(req.originalUrl);
                 var href = match ? match[1] : '/';
-                console.log(['ghredirect', href, req.github]);
                 if(!res.headerSent) {
                     res.statusCode = 302;
                     res.addTrailers({'Location': href});
