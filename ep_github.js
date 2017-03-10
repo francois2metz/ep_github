@@ -4,6 +4,7 @@ var settings = require('ep_etherpad-lite/node/utils/Settings'),
 
 var ghConfig = ghSettings.config;
 ghConfig.autologin = true;
+ghConfig.protocol = ghConfig.protocol || 'https';
 ghConfig.redirectUri = ghConfig.redirectUri || function(req) {
     return ghConfig.protocol + '://' + req.headers.host + '/ghredirect?to=' + req.originalUrl;
 }
