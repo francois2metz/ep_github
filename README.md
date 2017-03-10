@@ -35,15 +35,15 @@ Add to settings.json:
 
 See [github-auth](https://github.com/e-conomic/github-auth) to see all possible options.
 
-### Configure Auto Redirect
+### Configure auto redirect
 
-    the plugin by default redirect to your HTTPS host, to change the protocol edit
+the plugin by default redirect to your HTTPS host, to change the protocol edit
 
     "config": {
-      "protocol": "http"
+      "redirectProtocol": "http"
     }
 
-    if you want to disable the auto redirect feature
+if you want to DISABLE the auto redirect feature
 
     "config": {
       "redirectUri": "YOUR_GITHUB_CALLBACK_URI" /* e.g. https://v.etherpad.org/ */

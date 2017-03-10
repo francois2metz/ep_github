@@ -7,8 +7,8 @@ var reconfigure = function() {
     var ghConfig = ghSettings.config;
     ghConfig.autologin = true;
     ghConfig.redirectUri = ghConfig.redirectUri || function(req) {
-        return (ghConfig.protocol || 'https') + '://' + req.headers.host + '/ghredirect?to=' + req.originalUrl;
-    }
+        return (ghConfig.redirectProtocol || 'https') + '://' + req.headers.host + '/ghredirect?to=' + req.originalUrl;
+    };
 
     var gh = githubAuth(ghSettings.appId,
                         ghSettings.appSecret,
